@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.healthapp.ui.home.HomeFragment"
+        android:name="com.healthapp.ui.Home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_log"
-        android:name="com.healthapp.ui.dashboard.DashboardFragment"
+        android:name="com.healthapp.ui.Log.LogFragment"
         android:label="@string/title_log"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_log" />
 
     <fragment
         android:id="@+id/navigation_info"
-        android:name="com.healthapp.ui.notifications.NotificationsFragment"
+        android:name="com.healthapp.ui.Info.InfoFragment"
         android:label="@string/title_info"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_info" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.healthapp.ui.Home;
+package com.healthapp.ui.Info;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,22 +13,22 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthapp.R;
-import com.healthapp.databinding.FragmentHomeBinding;
+import com.healthapp.databinding.FragmentInfoBinding;
 
-public class HomeFragment extends Fragment {
+public class InfoFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentInfoBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(com.healthapp.ui.Home.HomeViewModel.class);
+        InfoViewModel notificationsViewModel =
+                new ViewModelProvider(this).get(com.healthapp.ui.Info.InfoViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentInfoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textInfo;
+        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

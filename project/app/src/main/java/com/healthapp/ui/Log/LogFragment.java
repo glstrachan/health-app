@@ -1,4 +1,4 @@
-package com.healthapp.ui.dashboard;
+package com.healthapp.ui.Log;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,28 +13,22 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthapp.R;
-import com.healthapp.databinding.FragmentDashboardBinding;
+import com.healthapp.databinding.FragmentLogBinding;
 
-public class DashboardFragment extends Fragment {
+public class LogFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
-    private FragmentDashboardBinding binding;
+    private FragmentLogBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        LogViewModel LogViewModel =
+                new ViewModelProvider(this).get(LogViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentLogBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.Log;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        LogViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
