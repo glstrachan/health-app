@@ -1,3 +1,5 @@
+package com.healthapp;
+
 import java.util.*;
 
 public class LogData implements java.io.Serializable {
@@ -8,6 +10,14 @@ public class LogData implements java.io.Serializable {
 	public LogData(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}
+
+	public void addDataInstance(DataInstance newInstance) {
+		data.add(newInstance);
+	}
+
+	public void removeDataInstance(int i) {
+		data.remove(i);
 	}
 
 	public String getFirstName() {
@@ -28,13 +38,5 @@ public class LogData implements java.io.Serializable {
 
 	public DataInstance getDataInstance() {
 		return data.get(data.size() - 1);
-	}
-
-	public void addDataInstance(DataInstance newInstance) {
-		data.add(newInstance);
-	}
-
-	public void removeDataInstance(int i) {
-		data.remove(i);
 	}
 }
