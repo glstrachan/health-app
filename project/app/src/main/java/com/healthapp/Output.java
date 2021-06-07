@@ -1,3 +1,5 @@
+package com.healthapp;
+
 import java.io.*;
 
 public class Output {

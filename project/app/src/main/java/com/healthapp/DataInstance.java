@@ -1,3 +1,5 @@
+package com.healthapp;
+
 import java.util.*;
 
 public class DataInstance {
