@@ -5,6 +5,7 @@ import java.io.*;
 public class Output {
 	public void save(LogData data) {
 		try {
+			// Save the file idk if this works with Android
 			FileOutputStream fileOut = new FileOutputStream("/saveLog.ser");
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
 			out.writeObject(data);
@@ -24,5 +25,7 @@ public class Output {
 			csv += data.getDate() + ", " + data.getHours() + ", " + data.getActivity() + ", " + data.getIntensity() + ", "
 					+ data.getQuality() + "\n";
 		}
+
+		// Save the file to memory
 	}
 }
