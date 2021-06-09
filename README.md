@@ -1,5 +1,5 @@
 # health-app
-The Grant Park Highschool health app featuring
+The Grant Park Highschool health app featuring\n
   Efficient saving and loading schemes
   .csv export capability
   A UI not written in Swing!
