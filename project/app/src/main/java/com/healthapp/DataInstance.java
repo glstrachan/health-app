@@ -13,16 +13,28 @@ public class DataInstance {
 		LOW, MEDIUM, HIGH
 	};
 
+	String[] stringIntensity = { "low", "medium", "high" };
+
+	public int intensityToString(Intensity intensity) {
+		return stringIntensity[intensity];
+	}
+
 	public enum Quality {
 		POOR, GOOD, EXCELLENT
 	};
 
-	public DataInstance(Date newDate, double newHours, String newActivity, Intensity newIntensity, Quality newQuality) {
-		date = newDate;
-		hours = newHours;
-		activity = newActivity;
-		intensity = newIntensity;
-		quality = newQuality;
+	String[] stringQuality = { "poor", "good", "high" };
+
+	public int qualityToString(Quality quality) {
+		return stringQuality[quality];
+	}
+
+	public DataInstance(Date date, double hours, String activity, Intensity intensity, Quality quality) {
+		this.date = date;
+		this.hours = hours;
+		this.activity = activity;
+		this.intensity = intensity;
+		this.quality = quality;
 	}
 
 	public Date getDate() {
