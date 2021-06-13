@@ -32,6 +32,8 @@ public class LogData implements java.io.Serializable {
 		return data;
 	}
 
+	public int getDataSize() { return data.size() - 1; }
+
 	public DataInstance getDataInstance(int i) {
 		return data.get(i);
 	}
