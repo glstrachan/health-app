@@ -15,8 +15,8 @@ public class DataInstance {
 
 	String[] stringIntensity = { "low", "medium", "high" };
 
-	public int intensityToString(Intensity intensity) {
-		return stringIntensity[intensity];
+	public String intensityToString(Intensity intensity) {
+		return stringIntensity[intensity.ordinal()];
 	}
 
 	public enum Quality {
@@ -25,8 +25,8 @@ public class DataInstance {
 
 	String[] stringQuality = { "poor", "good", "high" };
 
-	public int qualityToString(Quality quality) {
-		return stringQuality[quality];
+	public String qualityToString(Quality quality) {
+		return stringQuality[quality.ordinal()];
 	}
 
 	public DataInstance(Date date, double hours, String activity, Intensity intensity, Quality quality) {
