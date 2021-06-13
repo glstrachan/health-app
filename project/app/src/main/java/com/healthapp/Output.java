@@ -22,10 +22,19 @@ public class Output {
 		csv += "Date, Hours, Activity, Intensity, Quality\n";
 
 		for (DataInstance data : log.getData()) {
-			csv += data.getDate() + ", " + data.getHours() + ", " + data.getActivity() + ", " + data.getIntensity() + ", "
-					+ data.getQuality() + "\n";
+			csv += data.getDate() + ", " + data.getHours() + ", " + data.getActivity() + ", " + data.intensityToString(data.getIntensity()) + ", "
+					+ data.qualityToString(data.getQuality()) + "\n";
 		}
 
 		// Save the file to memory
+		FileWriter outputStream = null;
+
+		try {
+			outputStream = new FileWriter("healthlog.txt");
+
+			outputStream.write(csv);
+		} catch(IOException e) {
+
+		}
 	}
 }
