@@ -18,7 +18,11 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthapp.databinding.ActivityMainBinding;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
+
+    int num = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,5 +79,40 @@ public class MainActivity extends AppCompatActivity {
         Output.exportLog(log, this);
 
         Toast.makeText(this, "Log Added", Toast.LENGTH_SHORT).show();
+    }
+
+    public void changeOnClick(View v){
+        TextView text = findViewById(R.id.activity);
+        Button butt = findViewById(R.id.button);
+
+        RadioGroup rad = findViewById(R.id.type);
+        int radioButtonID = rad.getCheckedRadioButtonId();
+
+        String[][] words = {{"Running","Cycling","Swimming","Walking"},
+                            {"Stretching","Dancing","Gymnastics","Yoga"},
+                            {"Weight Lifting","Gardening","Rock Climbing","Resistance Training"},
+                            {"Planking","Squats","Push Ups","Sit Ups"}};
+
+        Random r = new Random();
+        int i = r.nextInt(words.length);
+
+        if(radioButtonID == -1){
+            num = r.nextInt(words[0].length);
+        }else
+        if(radioButtonID == R.id.Cardio){
+            num = 0;
+        }else
+        if(radioButtonID == R.id.Flex){
+            num = 1;
+        }else
+        if(radioButtonID == R.id.MS){
+            num = 2;
+        }else
+        if(radioButtonID == R.id.ME){
+            num = 3;
+        }
+
+        text.setText(words[num][i]);
+
     }
 }

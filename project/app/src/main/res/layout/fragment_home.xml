@@ -6,41 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".ui.Home.HomeFragment">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="136dp"
-        android:layout_height="121dp"
-        android:src="@drawable/bike"
+
+    <TextView
+        android:id="@+id/activity"
+        android:layout_width="411dp"
+        android:layout_height="35dp"
+        android:gravity="center"
+        android:text="@string/select_an_exercise"
+        android:textColor="#F005"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="160dp"
-        android:layout_height="142dp"
-        android:src="@drawable/yoga"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="116dp"
-        android:layout_height="175dp"
-        android:src="@drawable/weight"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.176" />
+        app:layout_constraintVertical_bias="0.659" />
 
     <TextView
         android:id="@+id/textView"
@@ -52,10 +32,10 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612"/>
+        app:layout_constraintVertical_bias="0.185" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -68,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.37">
 
 
         <TextView
@@ -95,16 +75,111 @@ muscular strength, and cardiovascular endurance all on a weekly basis
         android:id="@+id/textView5"
         android:layout_width="238dp"
         android:layout_height="30dp"
+        android:gravity="center"
         android:text="Welcome User!"
         android:textColor="#F005"
         android:textSize="25sp"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.093" />
+        app:layout_constraintVertical_bias="0.222" />
+
+    <RadioGroup
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.82">
+
+        <RadioButton
+            android:id="@+id/Flex"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Flex"
+            tools:layout_editor_absoluteX="134dp"
+            tools:layout_editor_absoluteY="411dp" />
+
+        <RadioButton
+            android:id="@+id/MS"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Musc. E"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="411dp" />
+
+        <RadioButton
+            android:id="@+id/ME"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Musc. S"
+            tools:layout_editor_absoluteX="231dp"
+            tools:layout_editor_absoluteY="411dp" />
+
+        <RadioButton
+            android:id="@+id/Cardio"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Cardio"
+            tools:layout_editor_absoluteX="231dp"
+            tools:layout_editor_absoluteY="411dp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeOnClick"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="@+id/type"
+        app:layout_constraintTop_toTopOf="@+id/scrollView3"
+        app:layout_constraintVertical_bias="0.646" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="159dp"
+        android:layout_height="98dp"
+        android:src="@drawable/bike"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="109dp"
+        android:layout_height="95dp"
+        android:src="@drawable/medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="131dp"
+        android:layout_height="110dp"
+        android:src="@drawable/yoga"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.993" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
