@@ -26,11 +26,11 @@ public class Output {
 		String csv = "";
 		// Name functionality not yet implemented
 		//csv += "Name, " + log.getFirstName() + " " + log.getLastName() + "\n\n";
-		csv += "Date, Hours, Activity, Intensity, Quality\n";
+		csv += "Date,Hours,Activity,Intensity,Quality\n";
 
 		for (DataInstance data : log.getData()) {
-			csv += data.getDate() + ", " + data.getHours() + ", " + data.getActivity() + ", " +
-					data.intensityToString(data.getIntensity()) + ", "
+			csv += data.getDate() + "," + data.getHours() + "," + data.getActivity() + ", " +
+					data.intensityToString(data.getIntensity()) + ","
 					+ data.qualityToString(data.getQuality()) + "\n";
 		}
 
