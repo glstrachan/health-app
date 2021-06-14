@@ -19,7 +19,8 @@ public class Input {
 			in.close();
 			fileIn.close();
 		} catch (IOException e) {
-			log = new LogData("John", "Doe");
+
+			log = new LogData(e.getMessage(), "Doe");
 		} catch (ClassNotFoundException c) {
 			log = new LogData("John", "Doe");
 		}
