@@ -9,7 +9,7 @@ public class Output {
 	public static void save(LogData data, Context context) {
 		try {
 			File path = context.getExternalFilesDir(null);
-			File file = new File(path, "saveLog.txt");
+			File file = new File(path, "saveLog.ser");
 
 			FileOutputStream fileOut = new FileOutputStream(file);
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -23,7 +23,8 @@ public class Output {
 
 	public static void exportLog(LogData log, Context context) {
 		String csv = "";
-		csv += "Name, " + log.getFirstName() + " " + log.getLastName() + "\n\n";
+		// Name functionality not yet implemented
+		//csv += "Name, " + log.getFirstName() + " " + log.getLastName() + "\n\n";
 		csv += "Date, Hours, Activity, Intensity, Quality\n";
 
 		for (DataInstance data : log.getData()) {
