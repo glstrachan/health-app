@@ -15,8 +15,10 @@ public class Input {
 			e.printStackTrace();
 			return log;
 		} catch (ClassNotFoundException c) {
-			System.out.println("LogData class not found");
-			c.printStackTrace();
+			//System.out.println("LogData class not found");
+			//c.printStackTrace();
+
+			log = new LogData("John", "Doe");
 			return log;
 		}
 
