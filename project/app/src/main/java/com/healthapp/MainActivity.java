@@ -1,7 +1,10 @@
 package com.healthapp;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +21,20 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthapp.databinding.ActivityMainBinding;
 
+<<<<<<< Updated upstream
 import java.util.Random;
+=======
+<<<<<<< HEAD
+import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.*;
+import java.text.SimpleDateFormat;
+=======
+import java.util.Random;
+>>>>>>> 86bc66a10dfca8412ca1f15324e284e3ce2196da
+>>>>>>> Stashed changes
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,10 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitEntry(View view){
 
-        EditText txtBox = findViewById(R.id.Date);
-        String Date = txtBox.getText().toString();
-
-        txtBox = findViewById(R.id.Hours);
+        EditText txtBox = findViewById(R.id.Hours);
         double Hours = Double.parseDouble(txtBox.getText().toString());
 
         txtBox = findViewById(R.id.Activity);
@@ -70,17 +83,72 @@ public class MainActivity extends AppCompatActivity {
         else if(qualityID == R.id.Excellent)
             Quality = DataInstance.Quality.EXCELLENT;
 
-        DataInstance dataInstance = new DataInstance(Date, Hours, Activity, Intensity, Quality);
+        Date date = Calendar.getInstance().getTime();
+        System.out.println("Current time => " + date);
+
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
+        String today = df.format(date);
+
+
+        DataInstance dataInstance = new DataInstance(today, Hours, Activity, Intensity, Quality);
         LogData log = Input.recoverSave(this);
         log.addDataInstance(dataInstance);
-        log.setFirstName("Bob");
-        
+
         Output.save(log, this);
         Output.exportLog(log, this);
 
         Toast.makeText(this, "Log Added", Toast.LENGTH_SHORT).show();
     }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    public void changeEntry(View view){
+        EditText txtBox = findViewById(R.id.numEntry);
+        int n = Integer.parseInt(txtBox.getText().toString()) - 1;
+        LogData log = new LogData();
+
+        if(log.getDataInstance(n) == null){
+            Toast.makeText(this, "Invalid Entry", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        TextView textView = findViewById(R.id.LogEntry);
+        textView.setText("Log Entry " + (n+1));
+
+        textView = findViewById(R.id.display_date);
+        textView.setText(log.getDataInstance(n).getDate());
+
+        textView = findViewById(R.id.display_hours);
+        textView.setText(Double.toString(log.getDataInstance(n).getHours()));
+
+        textView = findViewById(R.id.display_activity);
+        textView.setText(log.getDataInstance(n).getActivity());
+
+        textView = findViewById(R.id.display_intensity);
+        textView.setText(log.getDataInstance(n).intensityToString(log.getDataInstance(n).getIntensity()));
+
+        textView = findViewById(R.id.display_quality);
+        textView.setText(log.getDataInstance(n).qualityToString(log.getDataInstance(n).getQuality()));
+    }
+
+    public void deleteEntry(View view){
+        EditText txtBox = findViewById(R.id.numEntry);
+        int n = Integer.parseInt(txtBox.getText().toString()) - 1;
+        LogData log = new LogData();
+
+        if(log.getDataInstance(n) == null){
+            Toast.makeText(this, "Invalid Entry", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        log.removeDataInstance(n);
+        Toast.makeText(this, "Entry Deleted", Toast.LENGTH_SHORT).show();
+
+    }
+
+=======
+>>>>>>> Stashed changes
     public void changeOnClick(View v){
         TextView text = findViewById(R.id.activity);
         Button butt = findViewById(R.id.button);
@@ -115,4 +183,8 @@ public class MainActivity extends AppCompatActivity {
         text.setText(words[num][i]);
 
     }
+<<<<<<< Updated upstream
+=======
+>>>>>>> 86bc66a10dfca8412ca1f15324e284e3ce2196da
+>>>>>>> Stashed changes
 }

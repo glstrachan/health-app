@@ -1,6 +1,7 @@
 package com.healthapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import java.io.*;
@@ -37,12 +38,15 @@ public class Output {
 		// Save the file to memory
 		File path = context.getExternalFilesDir(null);
 		File file = new File(path, "health_log.csv");
-
-		FileOutputStream stream = new FileOutputStream(file);
 		try {
-		    stream.write(csv.getBytes());
-		} finally {
-		    stream.close();
+			FileOutputStream stream = new FileOutputStream(file);
+			stream.write(csv.getBytes());
+			stream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+
 	}
 }

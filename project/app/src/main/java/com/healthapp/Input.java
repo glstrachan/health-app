@@ -20,9 +20,9 @@ public class Input {
 			fileIn.close();
 		} catch (IOException e) {
 
-			log = new LogData(e.getMessage(), "Doe");
+			log = new LogData();
 		} catch (ClassNotFoundException c) {
-			log = new LogData("John", "Doe");
+			log = new LogData();
 		}
 
 		return log;

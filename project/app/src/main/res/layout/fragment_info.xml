@@ -9,64 +9,105 @@
     android:paddingTop="?attr/actionBarSize">
 
 
-
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="379dp"
-        android:layout_height="35dp"
+        android:id="@+id/LogEntry"
+        android:layout_width="150dp"
+        android:layout_height="33dp"
         android:gravity="center"
-        android:text="@string/about_the_app"
+        android:text="Log Entry"
         android:textColor="#F005"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561">
+        app:layout_constraintVertical_bias="0.052">
 
 
     </TextView>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="410dp"
-        android:layout_height="35dp"
-        android:gravity="center"
-        android:text="@string/physical_activity"
-        android:textColor="#F005"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079">
-
-
-    </TextView>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="411dp"
-        android:layout_height="35dp"
-        android:gravity="center"
-        android:text="@string/important_information"
-        android:textColor="#F005"
-        android:textSize="25sp"
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="333dp"
+        android:layout_height="135dp"
+        android:stretchColumns="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.16">
 
+        <TableRow>
 
-    </TextView>
+            <TextView
+                android:padding="4dip"
+                android:text="Date"
+                android:textColor="#000000" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="22dp" />
+            <TextView
+                android:id="@+id/display_date"
+                android:gravity="left"
+                android:padding="4dip"
+                android:textColor="#000000" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="4dip"
+                android:text="Hours"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/display_hours"
+                android:gravity="left"
+                android:padding="4dip"
+                android:textColor="#000000" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="4dip"
+                android:text="Activity"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/display_activity"
+                android:gravity="left"
+                android:padding="4dip"
+                android:textColor="#000000" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="4dip"
+                android:text="Intensity"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/display_intensity"
+                android:gravity="left"
+                android:padding="4dip"
+                android:textColor="#000000" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:padding="4dip"
+                android:text="Quality"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/display_quality"
+                android:gravity="left"
+                android:padding="4dip"
+                android:textColor="#000000" />
+        </TableRow>
+    </TableLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -74,5 +115,48 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="-14dp" />
+
+    <EditText
+        android:id="@+id/numEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Entry Number"
+        android:inputType="number"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <Button
+        android:id="@+id/display_submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeEntry"
+        android:text="Submit"
+        app:backgroundTint="#009688"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="214dp"
+        android:layout_height="58dp"
+        android:onClick="deleteEntry"
+        android:text="Delete Entry"
+        app:backgroundTint="#009688"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
