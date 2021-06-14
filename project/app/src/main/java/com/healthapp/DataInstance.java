@@ -3,7 +3,7 @@ package com.healthapp;
 import java.util.*;
 
 public class DataInstance {
-	private Date date;
+	private String date;
 	private double hours;
 	private String activity;
 	private Intensity intensity;
@@ -29,7 +29,7 @@ public class DataInstance {
 		return stringQuality[quality.ordinal()];
 	}
 
-	public DataInstance(Date date, double hours, String activity, Intensity intensity, Quality quality) {
+	public DataInstance(String date, double hours, String activity, Intensity intensity, Quality quality) {
 		this.date = date;
 		this.hours = hours;
 		this.activity = activity;
@@ -37,11 +37,11 @@ public class DataInstance {
 		this.quality = quality;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 

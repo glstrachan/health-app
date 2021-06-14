@@ -1,18 +1,23 @@
 package com.healthapp;
 
+import android.content.Context;
+
 import java.io.*;
 
 public class Input {
-	public LogData recoverSave() {
+	public static LogData recoverSave(Context context) {
 		LogData log = null;
 		try {
-			FileInputStream fileIn = new FileInputStream("/saveLog.ser");
+			File path = context.getExternalFilesDir(null);
+			File file = new File(path, "saveLog.txt");
+			FileInputStream fileIn = new FileInputStream(file);
 			ObjectInputStream in = new ObjectInputStream(fileIn);
 			log = (LogData) in.readObject();
 			in.close();
 			fileIn.close();
+			System.out.println("HI");
 		} catch (IOException e) {
-			e.printStackTrace();
+			log = new LogData("John", "Doe");
 			return log;
 		} catch (ClassNotFoundException c) {
 			//System.out.println("LogData class not found");
