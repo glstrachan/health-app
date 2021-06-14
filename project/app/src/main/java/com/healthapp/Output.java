@@ -33,14 +33,16 @@ public class Output {
 					+ data.qualityToString(data.getQuality()) + "\n";
 		}
 
+		
 		// Save the file to memory
-		FileWriter outputStream = null;
+		File path = context.getExternalFilesDir(null);
+		File file = new File(path, "health_log.csv");
 
+		FileOutputStream stream = new FileOutputStream(file);
 		try {
-			outputStream = new FileWriter("healthlog.txt");
-			outputStream.write(csv);
-		} catch(IOException e) {
-
+		    stream.write(csv.getBytes());
+		} finally {
+		    stream.close();
 		}
 	}
 }
