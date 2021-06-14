@@ -7,49 +7,47 @@
     tools:context=".ui.Log.LogFragment">
 
     <TextView
+        android:id="@+id/Qualitytxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quality"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/Good"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Medium"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Make A New Entry"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/Intensity_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Intensity"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/Low"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
+        app:layout_constraintTop_toBottomOf="@+id/Activity"
+        app:layout_constraintVertical_bias="0.533" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
-        android:layout_width="115dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Hours"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/Date"
         android:layout_width="115dp"
         android:layout_height="44dp"
         android:layout_marginTop="24dp"
@@ -58,81 +56,140 @@
         android:text="Date"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName4"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.202"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/Activity"
         android:layout_width="115dp"
         android:layout_height="44dp"
-        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Activity"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName4"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintBottom_toTopOf="@+id/Low"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.202"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+        app:layout_constraintTop_toBottomOf="@+id/Date"
+        app:layout_constraintVertical_bias="0.263" />
+
+    <EditText
+        android:id="@+id/Time"
+        android:layout_width="115dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toEndOf="@+id/Activity"
+        app:layout_constraintTop_toBottomOf="@+id/Date" />
 
     <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
-        tools:layout_editor_absoluteY="82dp" />
+        tools:layout_editor_absoluteY="731dp" />
 
     <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="top"
         tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="83dp" />
+        tools:layout_editor_absoluteY="731dp" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="409dp"
         android:layout_height="1dp"
-        android:layout_marginTop="20dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:layout_editor_absoluteX="1dp" />
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="98dp" />
 
     <RadioGroup
         android:id="@+id/Intensity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="263dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="206dp"
+        tools:layout_editor_absoluteY="285dp">
 
     </RadioGroup>
 
     <RadioButton
-        android:id="@+id/vibration"
-        android:layout_width="97dp"
-        android:layout_height="wrap_content"
-        android:text="Medium"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="296dp" />
-
-    <RadioButton
-        android:id="@+id/silent"
-        android:layout_width="71dp"
-        android:layout_height="wrap_content"
-        android:text="High"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="296dp" />
-
-    <RadioButton
-        android:id="@+id/sound"
+        android:id="@+id/Low"
         android:layout_width="74dp"
         android:layout_height="wrap_content"
         android:text="Low"
         tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="296dp" />
+        tools:layout_editor_absoluteY="306dp" />
+
+    <RadioButton
+        android:id="@+id/Medium"
+        android:layout_width="97dp"
+        android:layout_height="wrap_content"
+        android:text="Medium"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+    <RadioButton
+        android:id="@+id/High"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:text="High"
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="306dp" />
+
+    <RadioGroup
+        android:id="@+id/Quality.txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="362dp">
+
+    </RadioGroup>
+
+    <RadioButton
+        android:id="@+id/Good"
+        android:layout_width="97dp"
+        android:layout_height="wrap_content"
+        android:text="Medium"
+        tools:layout_editor_absoluteX="134dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <RadioButton
+        android:id="@+id/Poor"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:text="Low"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <RadioButton
+        android:id="@+id/Excellent"
+        android:layout_width="71dp"
+        android:layout_height="wrap_content"
+        android:text="High"
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="411dp" />
+
+    <Button
+        android:id="@+id/Submit.btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Good"
+        app:layout_constraintVertical_bias="0.093" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

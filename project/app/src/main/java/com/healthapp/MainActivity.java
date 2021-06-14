@@ -1,6 +1,9 @@
 package com.healthapp;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -26,5 +29,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+    }
+
+    public void submitEntry(View view){
+        EditText txtBox = findViewById(R.id.Date);
+        String Date = txtBox.getText().toString();
+        txtBox = findViewById(R.id.Activity);
+        String Activity = txtBox.getText().toString();
+        TextView t1 = findViewById(R.id.Intensity_text);
+        t1.setText(Date);
+        TextView t2 = findViewById(R.id.Quality_txt);
+        t2.setText(Activity);
     }
 }
