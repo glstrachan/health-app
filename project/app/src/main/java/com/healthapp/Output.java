@@ -10,7 +10,7 @@ public class Output {
 		try {
 			File path = context.getExternalFilesDir(null);
 			File file = new File(path, "saveLog.txt");
-			// Save the file idk if this works with Android
+
 			FileOutputStream fileOut = new FileOutputStream(file);
 			ObjectOutputStream out = new ObjectOutputStream(fileOut);
 			out.writeObject(data);
@@ -19,19 +19,9 @@ public class Output {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		/*try {
-			OutputStreamWriter outputStreamWriter = new OutputStreamWriter(
-					context.openFileOutput("saveLog.ser", Context.MODE_PRIVATE));
-			outputStreamWriter.write(String.valueOf(data));
-			outputStreamWriter.close();
-		}
-		catch (IOException e) {
-			Log.e("Exception", "File write failed: " + e.toString());
-		}*/
 	}
 
-	public static void exportLog(LogData log) {
+	public static void exportLog(LogData log, Context context) {
 		String csv = "";
 		csv += "Name, " + log.getFirstName() + " " + log.getLastName() + "\n\n";
 		csv += "Date, Hours, Activity, Intensity, Quality\n";

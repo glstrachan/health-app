@@ -69,10 +69,11 @@ public class MainActivity extends AppCompatActivity {
         DataInstance dataInstance = new DataInstance(Date, Hours, Activity, Intensity, Quality);
         LogData log = Input.recoverSave(this);
         log.addDataInstance(dataInstance);
-        Output.save(log,this);
+        log.setFirstName("Bob");
+        Output.save(log, this);
 
         log = Input.recoverSave(this);
-        String test = log.getDataInstance().getActivity();
+        String test = log.getFirstName();
 
         Toast.makeText(this, test, Toast.LENGTH_SHORT).show();
     }
