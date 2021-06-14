@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         DataInstance.Intensity Intensity = DataInstance.Intensity.LOW;
         if(intensityID == R.id.Low)
             Intensity = DataInstance.Intensity.LOW;
-        if(intensityID == R.id.Medium)
+        else if(intensityID == R.id.Medium)
             Intensity = DataInstance.Intensity.MEDIUM;
-        if(intensityID == R.id.High)
+        else if(intensityID == R.id.High)
             Intensity = DataInstance.Intensity.HIGH;
 
         radioGroup = findViewById(R.id.Quality);
@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
         DataInstance.Quality Quality = DataInstance.Quality.POOR;
         if(qualityID == R.id.Poor)
             Quality = DataInstance.Quality.POOR;
-        if(qualityID == R.id.Good)
+        else if(qualityID == R.id.Good)
             Quality = DataInstance.Quality.GOOD;
-        if(qualityID == R.id.Excellent)
+        else if(qualityID == R.id.Excellent)
             Quality = DataInstance.Quality.EXCELLENT;
 
         DataInstance dataInstance = new DataInstance(Date, Hours, Activity, Intensity, Quality);
