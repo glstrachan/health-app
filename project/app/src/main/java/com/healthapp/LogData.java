@@ -24,6 +24,11 @@ public class LogData implements java.io.Serializable {
 		return firstName;
 	}
 
+	public void setFirstName(String firstName)
+	{
+		this.firstName = firstName;
+	}
+
 	public String getLastName() {
 		return lastName;
 	}
