@@ -70,11 +70,10 @@ public class MainActivity extends AppCompatActivity {
         LogData log = Input.recoverSave(this);
         log.addDataInstance(dataInstance);
         log.setFirstName("Bob");
+        
         Output.save(log, this);
+        Output.exportLog(log, this);
 
-        log = Input.recoverSave(this);
-        String test = log.getFirstName();
-
-        Toast.makeText(this, test, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Log Added", Toast.LENGTH_SHORT).show();
     }
 }
