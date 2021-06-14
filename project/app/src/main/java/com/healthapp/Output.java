@@ -8,6 +8,7 @@ import java.io.*;
 public class Output {
 	public static void save(LogData data, Context context) {
 		try {
+			//Save the serialized Log Data
 			File path = context.getExternalFilesDir(null);
 			File file = new File(path, "saveLog.ser");
 
