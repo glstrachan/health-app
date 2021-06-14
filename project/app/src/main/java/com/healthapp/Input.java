@@ -10,7 +10,7 @@ public class Input {
 
 		try {
 			File path = context.getExternalFilesDir(null);
-			File file = new File(path, "saveLog.txt");
+			File file = new File(path, "saveLog.ser");
 
 			FileInputStream fileIn = new FileInputStream(file);
 			ObjectInputStream in = new ObjectInputStream(fileIn);
