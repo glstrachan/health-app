@@ -26,9 +26,6 @@ public class LogFragment extends Fragment {
 
         binding = FragmentLogBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        final TextView textView = binding.Log;
-        LogViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
