@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
         String Date = txtBox.getText().toString();
         txtBox = findViewById(R.id.Activity);
         String Activity = txtBox.getText().toString();
-        TextView t1 = findViewById(R.id.Intensity_text);
-        t1.setText(Date);
-        TextView t2 = findViewById(R.id.Quality_text);
-        t2.setText(Activity);
+        RadioGroup radioGroup = findViewById(R.id.Intensity);
+        radioGroup.getCheckedRadioButtonId();
     }
 }
