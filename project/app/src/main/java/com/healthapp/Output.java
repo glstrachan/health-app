@@ -34,7 +34,6 @@ public class Output {
 					+ data.qualityToString(data.getQuality()) + "\n";
 		}
 
-		
 		// Save the file to memory
 		File path = context.getExternalFilesDir(null);
 		File file = new File(path, "health_log.csv");
