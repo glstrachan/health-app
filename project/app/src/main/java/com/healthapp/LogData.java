@@ -25,7 +25,7 @@ public class LogData implements java.io.Serializable {
 
 	public int getDataSize() { return data.size() - 1; }
 
-	public DataInstance getDataInstance(int i) { return i >= data.size() ? null : data.get(i); }
+	public DataInstance getDataInstance(int i) { return i >= data.size() ? null : i < 0 ? null : data.get(i); }
 
 	public DataInstance getDataInstance() {
 		return data.get(data.size() - 1);
