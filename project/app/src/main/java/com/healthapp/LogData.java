@@ -26,7 +26,12 @@ public class LogData implements java.io.Serializable {
 
 	/* Used for sorting Log Data before saving */
 	
-	public ArrayList<DataInstance> quickSortEntries(ArrayList<DataInstance> list){
+	public void quickSortEntries()
+	{
+		data = sortHelper(data);
+	}
+	
+	public ArrayList<DataInstance> sortHelper(ArrayList<DataInstance> list){
 		if(list.size() > 1) {
 			DataInstance pivot = list.get(list.size() - 1);
 			ArrayList<DataInstance> left = new ArrayList<DataInstance>();
