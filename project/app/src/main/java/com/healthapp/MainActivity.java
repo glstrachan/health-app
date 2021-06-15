@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         int n = Integer.parseInt(txtBox.getText().toString()) - 1;
         LogData log = new LogData();
 
-        if(log.getDataInstance(n) == null || n < 0){
+        if(log.getDataInstance(n) == null) {
             Toast.makeText(this, "Invalid Entry", Toast.LENGTH_SHORT).show();
             return;
         }
