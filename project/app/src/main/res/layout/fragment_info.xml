@@ -8,14 +8,74 @@
     android:layout_height="match_parent"
     android:paddingTop="?attr/actionBarSize">
 
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="75dp"
+        android:layout_height="79dp"
+        android:src="@drawable/one"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.418" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="70dp"
+        android:layout_height="79dp"
+        android:src="@drawable/date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.111" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="75dp"
+        android:layout_height="79dp"
+        android:src="@drawable/fun"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.733" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="75dp"
+        android:layout_height="79dp"
+        android:src="@drawable/ints"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="75dp"
+        android:layout_height="79dp"
+        android:src="@drawable/time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.259" />
 
     <TextView
         android:id="@+id/LogEntry"
         android:layout_width="150dp"
         android:layout_height="33dp"
+        android:fontFamily="@font/roboto"
         android:gravity="center"
         android:text="Log Entry"
-        android:textColor="#F005"
+        android:textColor="#031E1C"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,37 +90,48 @@
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="333dp"
-        android:layout_height="135dp"
+        android:layout_height="400dp"
         android:stretchColumns="1"
+        app:layout_constraintHorizontal_bias="1.1"
+        app:layout_constraintVertical_bias="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <TextView
+                android:layout_height="80dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
                 android:padding="4dip"
                 android:text="Date"
-                android:textColor="#000000" />
+                android:textColor="#031E1C" />
 
             <TextView
                 android:id="@+id/display_date"
+                android:layout_height="40dp"
                 android:gravity="left"
-                android:padding="4dip"
+                android:padding="10dp"
                 android:textColor="#000000" />
         </TableRow>
 
         <TableRow>
 
             <TextView
+                android:layout_height="80dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
                 android:padding="4dip"
                 android:text="Hours"
-                android:textColor="#000000" />
+                android:textColor="#031E1C" />
 
             <TextView
                 android:id="@+id/display_hours"
+                android:layout_height="40dp"
                 android:gravity="left"
                 android:padding="4dip"
                 android:textColor="#000000" />
@@ -69,12 +140,16 @@
         <TableRow>
 
             <TextView
+                android:layout_height="80dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
                 android:padding="4dip"
                 android:text="Activity"
-                android:textColor="#000000" />
+                android:textColor="#031E1C" />
 
             <TextView
                 android:id="@+id/display_activity"
+                android:layout_height="40dp"
                 android:gravity="left"
                 android:padding="4dip"
                 android:textColor="#000000" />
@@ -83,12 +158,16 @@
         <TableRow>
 
             <TextView
+                android:layout_height="80dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
                 android:padding="4dip"
                 android:text="Intensity"
-                android:textColor="#000000" />
+                android:textColor="#031E1C" />
 
             <TextView
                 android:id="@+id/display_intensity"
+                android:layout_height="40dp"
                 android:gravity="left"
                 android:padding="4dip"
                 android:textColor="#000000" />
@@ -97,12 +176,16 @@
         <TableRow>
 
             <TextView
+                android:layout_height="80dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
                 android:padding="4dip"
                 android:text="Quality"
-                android:textColor="#000000" />
+                android:textColor="#031E1C" />
 
             <TextView
                 android:id="@+id/display_quality"
+                android:layout_height="40dp"
                 android:gravity="left"
                 android:padding="4dip"
                 android:textColor="#000000" />
@@ -126,10 +209,10 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintHorizontal_bias="0.194"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintVertical_bias="0.832" />
 
     <Button
         android:id="@+id/display_submit_btn"
@@ -137,13 +220,15 @@
         android:layout_height="wrap_content"
         android:onClick="changeEntry"
         android:text="Submit"
-        app:backgroundTint="#009688"
+        android:textColorHighlight="#3F51B5"
+        android:textColorLink="#3F51B5"
+        app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.872"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintVertical_bias="0.836" />
 
     <Button
         android:id="@+id/button2"
@@ -151,12 +236,12 @@
         android:layout_height="58dp"
         android:onClick="deleteEntry"
         android:text="Delete Entry"
-        app:backgroundTint="#009688"
+        app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.955" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

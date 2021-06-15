@@ -21,20 +21,14 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthapp.databinding.ActivityMainBinding;
 
-<<<<<<< Updated upstream
 import java.util.Random;
-=======
-<<<<<<< HEAD
 import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.*;
 import java.text.SimpleDateFormat;
-=======
 import java.util.Random;
->>>>>>> 86bc66a10dfca8412ca1f15324e284e3ce2196da
->>>>>>> Stashed changes
 
 public class MainActivity extends AppCompatActivity {
 
@@ -100,9 +94,6 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Log Added", Toast.LENGTH_SHORT).show();
     }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
     public void changeEntry(View view){
         EditText txtBox = findViewById(R.id.numEntry);
         int n = Integer.parseInt(txtBox.getText().toString()) - 1;
@@ -147,8 +138,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-=======
->>>>>>> Stashed changes
     public void changeOnClick(View v){
         TextView text = findViewById(R.id.activity);
         Button butt = findViewById(R.id.button);
@@ -183,8 +172,4 @@ public class MainActivity extends AppCompatActivity {
         text.setText(words[num][i]);
 
     }
-<<<<<<< Updated upstream
-=======
->>>>>>> 86bc66a10dfca8412ca1f15324e284e3ce2196da
->>>>>>> Stashed changes
 }

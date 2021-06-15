@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.Home.HomeFragment">
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="3dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16" />
 
     <TextView
         android:id="@+id/activity"
@@ -13,29 +24,30 @@
         android:layout_height="35dp"
         android:gravity="center"
         android:text="@string/select_an_exercise"
-        android:textColor="#F005"
+        android:textColor="#031E1C"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="411dp"
         android:layout_height="35dp"
+        android:fontFamily="@font/roboto"
         android:gravity="center"
         android:text="@string/important_information"
-        android:textColor="#F005"
+        android:textColor="#031E1C"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.185" />
+        app:layout_constraintVertical_bias="0.172" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -48,13 +60,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37">
+        app:layout_constraintVertical_bias="0.353">
 
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#363F51B5"
+
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="16dp"
             android:text="- People who don't regularly exercise may lose up to 80% of their muscle strength by age 65
 \n\n- Regular exercise helps lower blood pressure and cholesterol levels
 \n\n- Kids aged 12 - 19 should get 60 minutes of activity daily
@@ -67,7 +85,6 @@ muscular strength, and cardiovascular endurance all on a weekly basis
 \n\n- Made by Ron, Grayone, and Miranda
 
 "
-
             android:textSize="20sp" />
     </ScrollView>
 
@@ -75,16 +92,17 @@ muscular strength, and cardiovascular endurance all on a weekly basis
         android:id="@+id/textView5"
         android:layout_width="238dp"
         android:layout_height="30dp"
+        android:fontFamily="@font/roboto"
         android:gravity="center"
         android:text="Welcome User!"
-        android:textColor="#F005"
+        android:textColor="#031E1C"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.222" />
+        app:layout_constraintVertical_bias="0.17" />
 
     <RadioGroup
         android:id="@+id/type"
@@ -96,7 +114,7 @@ muscular strength, and cardiovascular endurance all on a weekly basis
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82">
+        app:layout_constraintVertical_bias=".98">
 
         <RadioButton
             android:id="@+id/Flex"
@@ -132,54 +150,56 @@ muscular strength, and cardiovascular endurance all on a weekly basis
 
     </RadioGroup>
 
+
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:onClick="changeOnClick"
-        android:text="Button"
+        android:text="Click to Generate"
+        app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.367"
         app:layout_constraintStart_toStartOf="@+id/type"
         app:layout_constraintTop_toTopOf="@+id/scrollView3"
-        app:layout_constraintVertical_bias="0.646" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="159dp"
-        android:layout_height="98dp"
-        android:src="@drawable/bike"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.974" />
+        app:layout_constraintVertical_bias="0.856" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="109dp"
-        android:layout_height="95dp"
-        android:src="@drawable/medium"
+        android:layout_width="104dp"
+        android:layout_height="94dp"
+        android:src="@drawable/booty"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.974" />
+        app:layout_constraintVertical_bias="0.783" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="99dp"
+        android:layout_height="96dp"
+        android:src="@drawable/cloke"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.785" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="131dp"
-        android:layout_height="110dp"
-        android:src="@drawable/yoga"
+        android:layout_width="114dp"
+        android:layout_height="97dp"
+        android:src="@drawable/bikey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.993" />
+        app:layout_constraintVertical_bias="0.787" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
