@@ -24,9 +24,8 @@ public class Output {
 	}
 
 	public static void exportLog(LogData log, Context context) {
+		/* Create ths CSV string */
 		String csv = "";
-		// Name functionality not yet implemented
-		//csv += "Name, " + log.getFirstName() + " " + log.getLastName() + "\n\n";
 		csv += "Date,Hours,Activity,Intensity,Quality\n";
 
 		for (DataInstance data : log.getData()) {
