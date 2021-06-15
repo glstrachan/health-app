@@ -44,8 +44,8 @@ public class LogData implements java.io.Serializable {
 				}
 			}
 			ArrayList<DataInstance> result = new ArrayList<DataInstance>();
-			result.addAll(quickSortEntries(left));
-			result.addAll(quickSortEntries(right));
+			result.addAll(sortHelper(left));
+			result.addAll(sortHelper(right));
 			return result;
 		}
 			return list;
