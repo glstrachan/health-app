@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void exportLog(View view){
         LogData log = new LogData();
-        log.quickSortEntries(log.getData());
+        log.quickSortEntries();
 
         Output.save(log, this);
         Output.exportLog(log, this);
