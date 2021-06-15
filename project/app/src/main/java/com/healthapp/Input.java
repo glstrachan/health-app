@@ -5,6 +5,7 @@ import android.content.Context;
 import java.io.*;
 
 public class Input {
+	/* Used for recovering serialized form of LogData */
 	public static LogData recoverSave(Context context) {
 		LogData log = null;
 
