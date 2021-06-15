@@ -7,10 +7,6 @@ public class LogData implements java.io.Serializable {
 
 	private static ArrayList<DataInstance> data = new ArrayList<DataInstance>();
 
-	public LogData() {
-
-	}
-
 	public void addDataInstance(DataInstance newInstance) {
 		data.add(newInstance);
 	}
