@@ -3,6 +3,7 @@ package com.healthapp;
 import java.util.*;
 import java.util.concurrent.atomic.DoubleAccumulator;
 
+/* Implement serializeable for easy read write access */
 public class LogData implements java.io.Serializable {
 
 	private static ArrayList<DataInstance> data = new ArrayList<DataInstance>();
@@ -23,10 +24,8 @@ public class LogData implements java.io.Serializable {
 
 	public DataInstance getDataInstance(int i) { return i >= data.size() ? null : i < 0 ? null : data.get(i); }
 
-	public DataInstance getDataInstance() {
-		return data.get(data.size() - 1);
-	}
-
+	/* Used for sorting Log Data before saving */
+	
 	public ArrayList<DataInstance> quickSortEntries(ArrayList<DataInstance> list){
 		if(list.size() > 1) {
 			DataInstance pivot = list.get(list.size() - 1);
