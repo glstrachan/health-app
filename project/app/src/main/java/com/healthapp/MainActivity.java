@@ -78,13 +78,10 @@ public class MainActivity extends AppCompatActivity {
             Quality = DataInstance.Quality.EXCELLENT;
 
         Date date = Calendar.getInstance().getTime();
-        System.out.println("Current time => " + date);
-
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
         String today = df.format(date);
 
-
-        DataInstance dataInstance = new DataInstance(today, Hours, Activity, Intensity, Quality);
+        DataInstance dataInstance = new DataInstance(date, Hours, Activity, Intensity, Quality);
         LogData log = Input.recoverSave(this);
         log.addDataInstance(dataInstance);
 
@@ -94,12 +91,23 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Log Added", Toast.LENGTH_SHORT).show();
     }
 
+    public void exportLog(View view){
+        LogData log = new LogData();
+        log.quickSortEntries(log.getData());
+
+        Output.save(log, this);
+        Output.exportLog(log, this);
+
+        Toast.makeText(this, "Log Exported", Toast.LENGTH_SHORT).show();
+
+    }
+
     public void changeEntry(View view){
         EditText txtBox = findViewById(R.id.numEntry);
         int n = Integer.parseInt(txtBox.getText().toString()) - 1;
         LogData log = new LogData();
 
-        if(log.getDataInstance(n) == null){
+        if(log.getDataInstance(n) == null || n < 0){
             Toast.makeText(this, "Invalid Entry", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -108,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setText("Log Entry " + (n+1));
 
         textView = findViewById(R.id.display_date);
-        textView.setText(log.getDataInstance(n).getDate());
+        textView.setText(log.getDataInstance(n).getDate().toString());
 
         textView = findViewById(R.id.display_hours);
         textView.setText(Double.toString(log.getDataInstance(n).getHours()));
@@ -134,6 +142,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         log.removeDataInstance(n);
+        Output.save(log, this);
+        Output.exportLog(log, this);
+
         Toast.makeText(this, "Entry Deleted", Toast.LENGTH_SHORT).show();
 
     }

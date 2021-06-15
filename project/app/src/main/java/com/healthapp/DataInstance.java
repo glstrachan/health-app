@@ -3,7 +3,7 @@ package com.healthapp;
 import java.util.*;
 
 public class DataInstance implements java.io.Serializable{
-	private String date;
+	private Date date;
 	private double hours;
 	private String activity;
 	private Intensity intensity;
@@ -29,7 +29,7 @@ public class DataInstance implements java.io.Serializable{
 		return stringQuality[quality.ordinal()];
 	}
 
-	public DataInstance(String date, double hours, String activity, Intensity intensity, Quality quality) {
+	public DataInstance(Date date, double hours, String activity, Intensity intensity, Quality quality) {
 		this.date = date;
 		this.hours = hours;
 		this.activity = activity;
@@ -37,11 +37,11 @@ public class DataInstance implements java.io.Serializable{
 		this.quality = quality;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

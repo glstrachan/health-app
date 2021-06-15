@@ -1,6 +1,7 @@
 package com.healthapp;
 
 import java.util.*;
+import java.util.concurrent.atomic.DoubleAccumulator;
 
 public class LogData implements java.io.Serializable {
 
@@ -28,5 +29,25 @@ public class LogData implements java.io.Serializable {
 
 	public DataInstance getDataInstance() {
 		return data.get(data.size() - 1);
+	}
+
+	public ArrayList<DataInstance> quickSortEntries(ArrayList<DataInstance> list){
+		if(list.size() > 1) {
+			DataInstance pivot = list.get(list.size() - 1);
+			ArrayList<DataInstance> left = new ArrayList<DataInstance>();
+			ArrayList<DataInstance> right = new ArrayList<DataInstance>();
+			for (DataInstance d : list) {
+				if (d.getDate().compareTo(pivot.getDate()) < 0) {
+					left.add(d);
+				} else {
+					right.add(d);
+				}
+			}
+			ArrayList<DataInstance> result = new ArrayList<DataInstance>();
+			result.addAll(quickSortEntries(left));
+			result.addAll(quickSortEntries(right));
+			return result;
+		}
+			return list;
 	}
 }
