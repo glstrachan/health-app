@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
-    public void submitEntry(View view){
+    public void submitEntry(View view) {
 
         EditText txtBox = findViewById(R.id.Hours);
         double Hours = Double.parseDouble(txtBox.getText().toString());
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Log Added", Toast.LENGTH_SHORT).show();
     }
 
-    public void exportLog(View view){
+    public void exportLog(View view) {
         LogData log = new LogData();
         log.quickSortEntries();
 
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void changeEntry(View view){
+    public void changeEntry(View view) {
         EditText txtBox = findViewById(R.id.numEntry);
         int n = Integer.parseInt(txtBox.getText().toString()) - 1;
         LogData log = new LogData();
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         TextView textView = findViewById(R.id.LogEntry);
-        textView.setText("Log Entry " + (n+1));
+        textView.setText("Log Entry " + (n + 1));
 
         textView = findViewById(R.id.display_date);
         textView.setText(log.getDataInstance(n).getDate().toString());
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(log.getDataInstance(n).qualityToString(log.getDataInstance(n).getQuality()));
     }
 
-    public void deleteEntry(View view){
+    public void deleteEntry(View view) {
         EditText txtBox = findViewById(R.id.numEntry);
         int n = Integer.parseInt(txtBox.getText().toString()) - 1;
         LogData log = new LogData();
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void changeOnClick(View v){
+    public void changeOnClick(View v) {
         TextView text = findViewById(R.id.activity);
         Button butt = findViewById(R.id.button);
 
@@ -166,17 +166,13 @@ public class MainActivity extends AppCompatActivity {
 
         if(radioButtonID == -1){
             num = r.nextInt(words[0].length);
-        }else
-        if(radioButtonID == R.id.Cardio){
+        } else if(radioButtonID == R.id.Cardio) {
             num = 0;
-        }else
-        if(radioButtonID == R.id.Flex){
+        } else if(radioButtonID == R.id.Flex) {
             num = 1;
-        }else
-        if(radioButtonID == R.id.MS){
+        } else if(radioButtonID == R.id.MS) {
             num = 2;
-        }else
-        if(radioButtonID == R.id.ME){
+        }else if(radioButtonID == R.id.ME) {
             num = 3;
         }
 
