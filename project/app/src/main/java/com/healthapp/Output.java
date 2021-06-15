@@ -9,7 +9,7 @@ import java.io.*;
 public class Output {
 	public static void save(LogData data, Context context) {
 		try {
-			//Save the serialized Log Data
+			/* Save the serialized Log Data */
 			File path = context.getExternalFilesDir(null);
 			File file = new File(path, "saveLog.ser");
 
@@ -34,7 +34,7 @@ public class Output {
 					+ data.qualityToString(data.getQuality()) + "\n";
 		}
 
-		// Save the file to memory
+		/* Save the file to memory */
 		File path = context.getExternalFilesDir(null);
 		File file = new File(path, "health_log.csv");
 		try {
