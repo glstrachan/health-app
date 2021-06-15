@@ -8,13 +8,14 @@ public class DataInstance implements java.io.Serializable {
 	private String activity;
 	private Intensity intensity;
 	private Quality quality;
-
+	
 	public enum Intensity {
 		LOW, MEDIUM, HIGH
 	};
 
 	String[] stringIntensity = { "low", "medium", "high" };
 
+	/* Uses ordinal positions of string array for determination of string value */
 	public String intensityToString(Intensity intensity) {
 		return stringIntensity[intensity.ordinal()];
 	}
@@ -25,6 +26,7 @@ public class DataInstance implements java.io.Serializable {
 
 	String[] stringQuality = { "poor", "good", "high" };
 
+	/* Uses ordinal positions of string array for determination of string value */
 	public String qualityToString(Quality quality) {
 		return stringQuality[quality.ordinal()];
 	}
@@ -36,6 +38,8 @@ public class DataInstance implements java.io.Serializable {
 		this.intensity = intensity;
 		this.quality = quality;
 	}
+	
+	/* Setters and Getters */
 
 	public Date getDate() {
 		return date;
