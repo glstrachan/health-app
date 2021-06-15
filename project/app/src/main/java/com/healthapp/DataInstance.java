@@ -2,6 +2,7 @@ package com.healthapp;
 
 import java.util.*;
 
+/* Implement serializable to convert to bytes */
 public class DataInstance implements java.io.Serializable {
 	private Date date;
 	private double hours;
