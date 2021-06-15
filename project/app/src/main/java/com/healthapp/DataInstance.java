@@ -2,7 +2,7 @@ package com.healthapp;
 
 import java.util.*;
 
-public class DataInstance implements java.io.Serializable{
+public class DataInstance implements java.io.Serializable {
 	private Date date;
 	private double hours;
 	private String activity;
